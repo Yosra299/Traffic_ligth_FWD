@@ -1,0 +1,4 @@
+#!/bin/bash
+# Write fuse bits..
+avrdude -q -c usbasp -p m32
+echo Done.

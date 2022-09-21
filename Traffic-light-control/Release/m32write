@@ -1,0 +1,4 @@
+#!/bin/bash
+# Erase & program..
+avrdude -q -c usbasp -p m32 -e -U flash:w:$1.hex:i -U eeprom:w:$1.eep:i
+echo Done.

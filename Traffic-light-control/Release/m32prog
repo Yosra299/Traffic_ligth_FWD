@@ -1,0 +1,8 @@
+#!/bin/bash
+# Erase & program..
+avrdude -q -c usbasp -p m32 -e -U flash:w:$1.hex:i -U eeprom:w:$1.eep:i
+# Write fuse bits..
+avrdude -q -c usbasp -p m32 -U lfuse:w:0x1A:m -U hfuse:w:0xDD:m
+# Lock..
+avrdude -q -c usbasp -p m32 -U lock:w:0xFC:m
+echo Done.

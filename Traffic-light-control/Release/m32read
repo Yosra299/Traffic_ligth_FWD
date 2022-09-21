@@ -1,0 +1,6 @@
+#!/bin/bash
+# Read..
+avrdude -q -c usbasp -p m32 -U flash:r:r_flash.hex:i -U eeprom:r:r_eeprom.hex:i
+# Disassemble..
+/home/yosra/Applications/avr8-gnu-toolchain-linux_x86_64/bin/avr-objdump -D -z -m avr r_flash.hex>>r_flash.asm
+echo Done.
